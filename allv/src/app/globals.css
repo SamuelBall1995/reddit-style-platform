@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(222 47% 11%);
+  --card:       hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+  --popover:    hsl(0 0% 100%);
+  --popover-foreground: hsl(222 47% 11%);
+  --primary:    hsl(221 83% 53%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary:  hsl(210 40% 96%);
+  --secondary-foreground: hsl(222 47% 11%);
+  --muted:      hsl(210 40% 96%);
+  --muted-foreground: hsl(215 16% 47%);
+  --accent:     hsl(210 40% 96%);
+  --accent-foreground: hsl(222 47% 11%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border:     hsl(214 32% 91%);
+  --input:      hsl(214 32% 91%);
+  --ring:       hsl(221 83% 53%);
+
+  /* chart palette (Apex) */
+  --chart-1: hsl(221 83% 53%);
+  --chart-2: hsl(262 83% 58%);
+  --chart-3: hsl(142 71% 45%);
+  --chart-4: hsl(0 84% 60%);
+  --chart-5: hsl(43 96% 56%);
+}
+.dark {
+  --background: hsl(222 47% 4%);
+  --foreground: hsl(213 31% 91%);
+  --card:       hsl(224 71% 4%);
+  --card-foreground: hsl(213 31% 91%);
+  --popover:    hsl(224 71% 4%);
+  --popover-foreground: hsl(213 31% 91%);
+  --primary:    hsl(217 91% 60%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary:  hsl(215 27% 17%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted:      hsl(215 27% 17%);
+  --muted-foreground: hsl(215 20% 65%);
+  --accent:     hsl(215 27% 17%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 63% 31%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border:     hsl(215 27% 17%);
+  --input:      hsl(215 27% 17%);
+  --ring:       hsl(224 76% 48%);
+
+  --chart-1: hsl(217 91% 60%);
+  --chart-2: hsl(292 84% 61%);
+  --chart-3: hsl(142 71% 45%);
+  --chart-4: hsl(0 84% 60%);
+  --chart-5: hsl(43 96% 56%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* 5) v4: container utility is no longer configurable — define your own */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 80rem; /* 1280px */
+}
+
+/* 6) Optional: keep v3-like border defaults (since v4 uses currentColor) */
+@layer base {
+  *, ::before, ::after, ::backdrop, ::file-selector-button {
+    border-color: var(--color-border, currentColor);
+  }
+}
