@@ -8,7 +8,7 @@ A minimal Reddit-style app with:
 
 - Posts CRUD per user
 
-- “Posts over time” chart (stacked by user) - Apexcharts (client-only)
+- “Posts over time” chart - Apexcharts (client-only)
 
 - Tailwind v4 + shadcn/ui styling
 
