@@ -5,6 +5,11 @@ import {
   ResponsiveContainer, AreaChart, Area, Line, XAxis, YAxis, Tooltip, CartesianGrid,
 } from "recharts";
 
+// NO LONGER USING THIS CHART FILE
+// REPLACED BY src/components/charts/PostsOverTimeApex.tsx
+// KEPT FOR REFERENCE
+// Recharts causing me alot of pain with SSR and values with accents/spaces
+
 type Row = { day: string; count: number | string | bigint | null | undefined };
 
 export default function UsersChartClient({ data }: { data: Row[] }) {
